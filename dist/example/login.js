@@ -12,17 +12,23 @@
 $("#login").click(function (event) {
     /* Act on the event */
     $.ajax({
-        "url": sysSettings.domainPath + "BVSP_CUSTOMER_SEARCH",
+        "url": "https://www.billionvouchers.com/BVwebapi/" + "BVSP_CUSTOMER_SEARCH",
         "async": true,
         "crossDomain": true,
         "type": "POST",
         "dataType": "json",
         "contentType": "application/json; charset=utf-8",
-        "data": function (data) {
-            var param = {
-                "token": SecurityManager.generate(),
+        "data": {Phone: $("#telno").val()},
+            //function () {
+            //        var param = {
+            //            "Phone": $("#telno").val()
+            //        }
+            //        console.log(param);
+
+            //        return JSON.stringify(param);
+            //    },
+            "success": function (result) {
+                console.log(result.ResultSets[0]);
             }
-            alert(data);
-        }
-    })
+        })
 });
