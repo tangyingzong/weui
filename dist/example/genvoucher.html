@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>WeUI</title>
+    <link rel="stylesheet" href="../style/weui.css"/>
+    <link rel="stylesheet" href="./example.css"/>
+</head>
+<body >
+    <div class="page__hd">
+        <h1 class="page__title">亿惠权益平台</h1>
+        <p class="page__desc">激活电子券</p>
+    </div>
+
+    <div class="weui-cells__title">请输入电子券码</div>
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" id="pincode"/>
+            </div>
+        </div>
+        <label class="weui-cell weui-check__label" id="telno">13888888888</label>
+    </div>
+
+
+    <button class="weui-btn weui-btn_primary" id="genvoucher">激活权益</button>
+    <button class="weui-btn weui-btn_default" id="productdetail">权益详情</button>
+
+    <script src="./zepto.min.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+    <script src="./genvoucher.js"></script>
+    <script src="./jquery.js"></script>
+</body>
+</html>
