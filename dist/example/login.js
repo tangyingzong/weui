@@ -11,6 +11,9 @@
 
 $("#login").click(function (event) {
     /* Act on the event */
+    var param = {
+        "Phone": $("#telno").val()
+    }
     $.ajax({
         "url": "https://www.billionvouchers.com/BVwebapi/" + "BVSP_CUSTOMER_SEARCH",
         "async": true,
@@ -18,17 +21,14 @@ $("#login").click(function (event) {
         "type": "POST",
         "dataType": "json",
         "contentType": "application/json; charset=utf-8",
-        "data": {Phone: $("#telno").val()},
-            //function () {
-            //        var param = {
-            //            "Phone": $("#telno").val()
-            //        }
-            //        console.log(param);
-
-            //        return JSON.stringify(param);
-            //    },
-            "success": function (result) {
-                console.log(result.ResultSets[0]);
+        "data":JSON.stringify(param),
+        "success": function (result) {
+            if (result.ResultSets[0].length > 0) {
+                console.log('登陆成功');
+                location.href = "home.html"
+            }
+            else
+                console.log('登陆失败');
             }
         })
 });
